@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import "../assets/Header.css";
 
 class Header extends Component {
   render() {
