@@ -1,0 +1,21 @@
+.Dashboard {
+  box-sizing: border-box;
+  display: grid;
+  background: #f1f1f1;
+  height: 95vh;
+  width: 95vw;
+
+  margin: 50px;
+}
+
+.Dashboard-middle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Middle-left {
+  margin: 0 auto;
+}
+.Middle-right {
+  margin: 0 auto;
+}
