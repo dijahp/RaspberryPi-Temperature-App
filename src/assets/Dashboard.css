@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap');
+
 .Dashboard {
   box-sizing: border-box;
   display: grid;
   background: #f1f1f1;
   height: 100vh;
   width: 100vw;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .Dashboard-middle {
@@ -16,4 +19,5 @@
 }
 .Middle-right {
   margin: 0 auto;
+
 }

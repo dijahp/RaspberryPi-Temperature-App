@@ -5,6 +5,7 @@ import Header from "./Header";
 import Chart from "./Chart";
 import Form from "./Form";
 import Card from "./Card";
+import FormContainer from './FormContainer'
 
 class Dashboard extends Component {
   render() {
@@ -20,9 +21,14 @@ class Dashboard extends Component {
             <Card />
           </div>
           <div className='Middle-right'>
-            <Form />
+            <div className="Form-container">
+            <FormContainer />
+            </div>
+
           </div>
+
         </div>
+        <Chart />
       </div>
     );
   }
