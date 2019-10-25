@@ -1,12 +1,17 @@
 .Card-card {
-  border: 1px solid black;
-  width: 100px;
+  border-right: 1px solid #a8a8a8;
+  width: 150px;
+  height: 150px;
 }
 .Card {
-  border: 1px solid black;
+  border: 1px solid #a8a8a8;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 500px;
-  margin-bottom: 100px;
-  height: 100px;
+  width: 45vw;
+  margin-bottom: 40px;
+  height: 150px;
+  min-width: 300px;
+  -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
 }

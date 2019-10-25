@@ -1,0 +1,22 @@
+
+
+.AvailableSensors{
+    min-height: 200px;
+    text-align: center;
+background: #fff;
+color: #222;
+}
+
+.AvailableSensors h3{
+    font-size: 1.3rem;
+
+}
+
+.AvailableSensors ul{
+    list-style: none;
+}
+.AvailableSensors ul li{
+    font-size: 1.1rem;
+    margin-right: 20px;
+
+}
