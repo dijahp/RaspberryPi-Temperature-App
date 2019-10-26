@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import "./App.css";
 
-import Dashboard from "../src/components/Dashboard";
-import SignIn from "../src/components/SignIn";
-import SignUp from "../src/components/SignUp";
-import SignOut from "../src/components/SignOut";
+import Dashboard from "./components/Dashboard";
+import SignIn from "./components/SignIn/SignIn";
+import SignUp from "./components/SignUp/SignUp";
+import SignOut from "./components/SignOut/SignOut";
 
-import * as ROUTES from '../src/constants/routes';
+import * as ROUTES from './constants/routes';
 
 const App = () => (
   <Router>
