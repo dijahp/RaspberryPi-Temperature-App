@@ -1,14 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap");
 
+.Dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
 .Dashboard {
   box-sizing: border-box;
-  display: grid;
-  background: #f1f1f1;
+
+  background: #f8f9fa;
   height: 100vh;
-  width: 100vw;
-  font-family: 'Open Sans', sans-serif;
+
+  font-family: "Open Sans", sans-serif;
 }
 
+.Card-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.Card-section img {
+  width: 70px;
+}
 .Dashboard-middle {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -19,5 +30,4 @@
 }
 .Middle-right {
   margin: 0 auto;
-
 }
