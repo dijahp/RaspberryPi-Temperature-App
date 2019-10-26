@@ -14,7 +14,7 @@
 
 .Card-items {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.3fr;
   height: 150px;
   justify-items: center;
   align-content: center;

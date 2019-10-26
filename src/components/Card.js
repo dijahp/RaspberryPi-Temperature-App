@@ -7,7 +7,7 @@ class Card extends Component {
     super(props);
   }
   render() {
-    const { iconImg } = this.props;
+    const { iconImg, cardData, cardDesc } = this.props;
     return (
       <div className='Card'>
         <div className='Card-items'>
@@ -15,8 +15,8 @@ class Card extends Component {
             <img src={iconImg}></img>
           </div>
           <div className='Card-info'>
-            <p className='Card-title'>Current Temperature</p>
-            <p className='Card-data'>30&deg;</p>
+            <p className='Card-title'>{cardDesc}</p>
+            <p className='Card-data'>{cardData}</p>
           </div>
         </div>
       </div>
