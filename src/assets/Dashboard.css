@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap");
+
+.Dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+.Dashboard {
+  box-sizing: border-box;
+
+  background: #f8f9fa;
+  height: 100vh;
+
+  font-family: "Open Sans", sans-serif;
+}
+
+.Card-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.Card-section img {
+  width: 70px;
+}
+.Dashboard-middle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Middle-left {
+  margin: 0 auto;
+}
+.Middle-right {
+  margin: 0 auto;
+}
