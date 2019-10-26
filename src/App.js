@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import "./App.css";
 import Dashboard from "./components/Dashboard";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-import SignOut from "./components/SignOut";
+import SignIn from "./components/SignIn/SignIn.js";
+import SignUp from "./components/SignUp/SignUp.js";
+import SignOut from "./components/SignOut/SignOut.js";
 
 import * as ROUTES from '../src/constants/routes';
 
