@@ -10,22 +10,11 @@ import * as ROUTES from "./constants/routes";
 const App = () => (
   <Router>
     <div>
-<<<<<<< HEAD
-      <Switch>
-        <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
-        <Route path={ROUTES.SIGN_UP} component={SignUp} />
-        <Route path={ROUTES.SIGN_OUT} component={SignOut} />
-        <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
-      </Switch>
-=======
       <SignIn />
-
-        <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
-        <Route path={ROUTES.SIGN_UP} component={SignUp} />
-        <Route path={ROUTES.SIGN_OUT} component={SignOut} />
-        <Route path={ROUTES.DASHBOARD} component={Dashboard} />
-
->>>>>>> a3cad898be89631933cbf9aa7e6663858942025c
+      <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
+      <Route path={ROUTES.SIGN_UP} component={SignUp} />
+      <Route path={ROUTES.SIGN_OUT} component={SignOut} />
+      <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
     </div>
   </Router>
 );
