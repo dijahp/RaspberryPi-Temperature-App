@@ -1,8 +1,8 @@
 import React from 'react';
 
 const SignIn = () => (
-  <div>
-    <h1>SignIn</h1>
+  <div> 
+    <h1>Log In</h1>
   </div>
 );
 
