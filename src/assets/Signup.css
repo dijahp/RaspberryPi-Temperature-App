@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap");
+
+body {
+  background: url(../assets/IMG/snowsun.jpg);
+  height: 100vh;
+  flex-wrap: wrap;
+  background-size: cover;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.Signup-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.Signup {
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  align-content: center;
+  border-radius: 8px;
+  display: grid;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.Signup h1 {
+  color: #7e7e7e;
+  font-weight: 100;
+}
+.Signup input {
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  margin: 5px 0;
+  padding-left: 10px;
+}
+
+.Signup button {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  background: #1f1f1f;
+  color: #fff;
+  height: 50px;
+  border-radius: 20px;
+  transition: 0.3s all;
+}
+.Signup button:hover {
+  opacity: 0.7;
+}
+
+.Signup a {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #7e7e7e;
+  text-decoration: none;
+}
+
+.SignupToSignin {
+  display: grid;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 30px;
+  width: 400px;
+  height: 450px;
+  background: #1f1f1f;
+  color: #fff;
+  align-content: center;
+  justify-content: center;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.SignupToSignin h1 {
+  font-weight: 100;
+}
+.SignupToSignin p {
+  width: 300px;
+}
+.SignupToSignin button {
+  width: 200px;
+  height: 50px;
+  background: white;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  transition: 0.3s all;
+}
+
+.SignupToSignin button:hover {
+  opacity: 0.7;
+}
