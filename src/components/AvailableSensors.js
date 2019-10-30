@@ -13,7 +13,7 @@ class AvailableSensors extends Component {
     console.log(e.target.textContent);
   }
   render() {
-    const sensors = this.props.availableSensors;
+    const sensors = this.props.availableSensors.name;
 
     return (
       <div className='AvailableSensors'>

@@ -11,17 +11,38 @@ import Thermo from "../assets/IMG/temperature.svg";
 import Humid from "../assets/IMG/humidity.svg";
 import Pressure from "../assets/IMG/pressure.svg";
 import Calendar from "../assets/IMG/calendar.svg";
+
 import Chart2 from "./Chart2";
 
 const date = new Date();
 const today = date.getMonth() + 1 + "/" + date.getDate();
-console.log(today);
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      AvailableSensors: ["testsensor", "testsensor2"]
+      // AvailableSensors: ["testsensor", "testsensor2"]
+      AvailableSensors: {
+        name: ["testsensor", "testsensor2"],
+        location: ["Atlanta, GA", "Dallas, Texas"]
+      }
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleInputChange(e) {
+    const target = e.target;
+    const name = target.name;
+    const value = target.value;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit() {
+    alert("test");
   }
 
   render() {
