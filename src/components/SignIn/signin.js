@@ -80,7 +80,7 @@ class SignInFormBase extends Component {
         </button>
         <a href=''>Forgot Your Password?</a>
 
-        {error && <p>{error.message}</p>}
+        {error && <p className='error-msg'>{error.message}</p>}
       </form>
     );
   }
