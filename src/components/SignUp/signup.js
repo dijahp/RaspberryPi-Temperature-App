@@ -102,7 +102,7 @@ class SignUpFormBase extends Component {
           Sign Up
         </button>
 
-        {error && <p>{error.message}</p>}
+        {error && <p className='error-msg'>{error.message}</p>}
       </form>
     );
   }
