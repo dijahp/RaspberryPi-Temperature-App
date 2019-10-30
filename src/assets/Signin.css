@@ -1,24 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap");
-
-.body-signup {
-  background: url(../assets/IMG/snowsun.jpg);
-  height: 100vh;
-  flex-wrap: wrap;
-  background-size: cover;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-}
-.Signup-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.Signup {
-  width: 500px;
-  height: 500px;
+.Signin {
+  width: 450px;
+  height: 450px;
   background: #fff;
   align-content: center;
   border-radius: 8px;
@@ -27,11 +9,17 @@
   font-family: "Open Sans", sans-serif;
 }
 
-.Signup h1 {
+.Signin-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Signin h1 {
   color: #7e7e7e;
   font-weight: 100;
 }
-.Signup input {
+
+.Signin input {
   width: 200px;
   height: 40px;
   border-radius: 20px;
@@ -41,7 +29,7 @@
   padding-left: 10px;
 }
 
-.Signup button {
+.Signin button {
   margin-top: 10px;
   font-size: 1.2rem;
   background: #1f1f1f;
@@ -50,18 +38,25 @@
   border-radius: 20px;
   transition: 0.3s all;
 }
-.Signup button:hover {
+.Signin button:hover {
   opacity: 0.7;
+}
+
+.Signin a {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #7e7e7e;
+  text-decoration: none;
 }
 
 /* This section is the darker container */
 
-.SignupToSignin {
+.SigninToSignup {
   display: grid;
   font-family: "Open Sans", sans-serif;
   margin-top: 30px;
-  width: 400px;
-  height: 450px;
+  width: 350px;
+  height: 400px;
   background: #1f1f1f;
   color: #fff;
   align-content: center;
@@ -70,13 +65,15 @@
   border-bottom-right-radius: 8px;
 }
 
-.SignupToSignin h1 {
+.SigninToSignup h1 {
   font-weight: 100;
 }
-.SignupToSignin p {
-  width: 300px;
+.SigninToSignup p {
+  width: 230px;
+  font-size: 18px;
 }
-.SignupToSignin button {
+.SigninToSignup button {
+  margin-top: 10px;
   width: 200px;
   height: 50px;
   background: white;
@@ -84,7 +81,11 @@
   font-size: 1.2rem;
   transition: 0.3s all;
 }
+.SigninToSignup button a {
+  color: black;
+  text-decoration: none;
+}
 
-.SignupToSignin button:hover {
+.SigninToSignup button:hover {
   opacity: 0.7;
 }
