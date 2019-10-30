@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap");
 
-body {
+.body-signup {
   background: url(../assets/IMG/snowsun.jpg);
   height: 100vh;
   flex-wrap: wrap;

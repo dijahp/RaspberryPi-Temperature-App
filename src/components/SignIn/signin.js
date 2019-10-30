@@ -1,13 +1,13 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { compose } from 'recompose';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { compose } from "recompose";
 
-import { SignUpLink } from '../SignUp';
-import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../constants/routes';
+import { SignUpLink } from "../SignUp/signup";
+import { withFirebase } from "../Firebase";
+import * as ROUTES from "../../constants/routes";
 
 const SignIn = () => (
-  <div> 
+  <div>
     <h1>Log In</h1>
     <SignInForm />
     <SignUpLink />
@@ -15,9 +15,9 @@ const SignIn = () => (
 );
 
 const INITIAL_STATE = {
-  email: '',
-  password: '',
-  error: null,
+  email: "",
+  password: "",
+  error: null
 };
 
 class SignInFormBase extends Component {
@@ -40,35 +40,35 @@ class SignInFormBase extends Component {
         this.setState({ error });
       });
 
-      event.preventDefault();
+    event.preventDefault();
   };
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  render () {
+  render() {
     const { email, password, error } = this.state;
 
-    const isInvalid = password === '' || email === '';
+    const isInvalid = password === "" || email === "";
 
     return (
       <form onSubmit={this.onSubmit}>
         <input
-          name="email"
+          name='email'
           value={email}
           onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
+          type='text'
+          placeholder='Email Address'
         />
         <input
-          name="password"
+          name='password'
           value={password}
           onChange={this.onChange}
-          type="password"
-          placeholder="Password"
+          type='password'
+          placeholder='Password'
         />
-        <button disabled={isInvalid} type="submit">
+        <button disabled={isInvalid} type='submit'>
           Sign In
         </button>
 
@@ -80,7 +80,7 @@ class SignInFormBase extends Component {
 
 const SignInForm = compose(
   withRouter,
-  withFirebase,
+  withFirebase
 )(SignInFormBase);
 
 export default SignIn;

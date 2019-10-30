@@ -7,12 +7,14 @@ import * as ROUTES from "../../constants/routes";
 import "../../assets/Signup.css";
 
 const SignUp = () => (
-  <div className='Signup-container'>
-    <SignUpForm />
-    <div className='SignupToSignin'>
-      <h1>Sign In</h1>
-      <p>Already have an account? Click the link below to sign in.</p>
-      <button>Sign In</button>
+  <div className='body-signup'>
+    <div className='Signup-container'>
+      <SignUpForm />
+      <div className='SignupToSignin'>
+        <h1>Sign In</h1>
+        <p>Already have an account? Click the link below to sign in.</p>
+        <button>Sign In</button>
+      </div>
     </div>
   </div>
 );
