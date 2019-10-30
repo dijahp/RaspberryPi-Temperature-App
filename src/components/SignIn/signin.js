@@ -5,12 +5,16 @@ import { compose } from "recompose";
 import { SignUpLink } from "../SignUp/signup";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
+import "../../assets/Signin.css";
 
 const SignIn = () => (
-  <div>
-    <h1>Log In</h1>
-    <SignInForm />
-    <SignUpLink />
+  <div className='body-signup'>
+    <div className='Signin-container'>
+      <SignInForm />
+      <div className='SigninToSignup'>
+        <SignUpLink />
+      </div>
+    </div>
   </div>
 );
 
@@ -53,8 +57,10 @@ class SignInFormBase extends Component {
     const isInvalid = password === "" || email === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form className='Signin' onSubmit={this.onSubmit}>
+        <h1>Log In</h1>
         <input
+          className='Signin-email'
           name='email'
           value={email}
           onChange={this.onChange}
@@ -62,15 +68,17 @@ class SignInFormBase extends Component {
           placeholder='Email Address'
         />
         <input
+          className='Signin-pass'
           name='password'
           value={password}
           onChange={this.onChange}
           type='password'
           placeholder='Password'
         />
-        <button disabled={isInvalid} type='submit'>
+        <button className='Signin-btn' disabled={isInvalid} type='submit'>
           Sign In
         </button>
+        <a href=''>Forgot Your Password?</a>
 
         {error && <p>{error.message}</p>}
       </form>
