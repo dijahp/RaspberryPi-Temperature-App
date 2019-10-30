@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { compose } from "recompose";
 
-import { SignUpLink } from "../SignUp/signup";
+import { SignUpLink } from "../SignUp/SignUp";
 import { withFirebase } from "../Firebase";
-import * as ROUTES from "../../constants/routes";
+import * as ROUTES from "../../constants/Routes";
 import "../../assets/Signin.css";
 
 const SignIn = () => (
