@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose'; // Used to organize higher-order components
 
-import { withFirebase } from '../Firebase';
+import { withFirebase } from '../Firebase/Index';
 import * as ROUTES from '../../constants/Routes';
 
 const SignUp = () => (
