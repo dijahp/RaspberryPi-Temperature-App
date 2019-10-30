@@ -7,6 +7,11 @@ class Sidebar extends Component {
     return (
       <div className='Sidebar-section'>
         <h1>Fire and Ice</h1>
+        <nav>
+          <div className='Nav-item'>
+            <a href='#'>Dashboard</a>
+          </div>
+        </nav>
       </div>
     );
   }

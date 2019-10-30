@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "../assets/Header.css";
+import SignOutButton from "./SignOut/SignOut";
 
 class Header extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Header extends Component {
     return (
       <div className='Header'>
         <h4>Welcome, {this.state.name}</h4>
+        <SignOutButton />
       </div>
     );
   }
