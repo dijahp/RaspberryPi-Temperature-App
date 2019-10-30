@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "../assets/Header.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignOutButton from "./SignOut/signout";
 
 class Header extends Component {
