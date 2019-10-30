@@ -1,16 +1,26 @@
 .Header {
   color: black;
   width: 100%;
-  height: 40px;
+  height: 50px;
   border-bottom: 1px solid rgba(102, 97, 91, 0.2);
   font-family: "Open Sans", sans-serif;
+  display: inline-flex;
+  justify-content: flex-end;
 }
 
 .Header h4 {
   display: flex;
-  font-size: 1rem;
-  justify-content: flex-end;
+  font-size: 1.2rem;
+  align-items: center;
   color: rgba(102, 97, 91, 0.7);
   font-weight: 200;
-  margin-right: 10px;
+  margin-right: 20px;
+}
+
+.Header button {
+  font-size: 1rem;
+  width: 100px;
+  background: #1f1f1f;
+  border: none;
+  color: #fff;
 }
