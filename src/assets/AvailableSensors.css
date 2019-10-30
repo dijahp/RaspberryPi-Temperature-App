@@ -1,22 +1,24 @@
-
-
-.AvailableSensors{
-    min-height: 200px;
-    text-align: center;
-background: #fff;
-color: #222;
+.AvailableSensors {
+  min-height: 200px;
+  text-align: center;
+  background: #fff;
+  color: #222;
 }
 
-.AvailableSensors h3{
-    font-size: 1.3rem;
-
+.AvailableSensors h3 {
+  font-size: 1.3rem;
 }
 
-.AvailableSensors ul{
-    list-style: none;
+.AvailableSensors ul {
+  list-style: none;
 }
-.AvailableSensors ul li{
-    font-size: 1.1rem;
-    margin-right: 20px;
-
+.AvailableSensors ul li {
+  font-size: 1.1rem;
+  margin-right: 20px;
+  transition: 0.2s all;
+}
+.AvailableSensors ul li:hover {
+  font-size: 1.1rem;
+  margin-right: 20px;
+  font-weight: 800;
 }

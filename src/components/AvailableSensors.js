@@ -5,6 +5,12 @@ import "../assets/AvailableSensors.css";
 class AvailableSensors extends Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    console.log(e.target.textContent);
   }
   render() {
     const sensors = this.props.availableSensors;
@@ -14,7 +20,9 @@ class AvailableSensors extends Component {
         <h3>Sensors currently activated:</h3>
         <ul>
           {sensors.map((sensor, index) => (
-            <li key={index}>{sensor}</li>
+            <li onClick={e => this.handleClick(e)} key={index}>
+              {sensor}
+            </li>
           ))}
         </ul>
       </div>
