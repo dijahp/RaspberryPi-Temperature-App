@@ -1,29 +1,22 @@
-import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { compose } from "recompose"; // Used to organize higher-order components
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { compose } from 'recompose'; // Used to organize higher-order components
 
-import { withFirebase } from "../Firebase";
-import * as ROUTES from "../../constants/routes";
-import "../../assets/Signup.css";
+import { withFirebase } from '../Firebase/Index';
+import * as ROUTES from '../../constants/Routes';
 
 const SignUp = () => (
-  <div className='body-signup'>
-    <div className='Signup-container'>
-      <SignUpForm />
-      <div className='SignupToSignin'>
-        <h1>Sign In</h1>
-        <p>Already have an account? Click the link below to sign in.</p>
-        <button>Sign In</button>
-      </div>
-    </div>
+  <div>
+    <h1>Sign Up</h1>
+    <SignUpForm />
   </div>
 );
 
 const INITIAL_STATE = {
-  username: "",
-  email: "",
-  password: "",
-  passwordConfirm: "",
+  username: '',
+  email: '',
+  password: '',
+  passwordConfirm: '',
   error: null
 };
 
@@ -47,62 +40,61 @@ class SignUpFormBase extends Component {
         this.setState({ error });
       });
 
-    event.preventDefault();
-  };
+      event.preventDefault();
+  }
 
-  onChange = event => {
+  onChange =event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
-    const { username, email, password, passwordConfirm, error } = this.state;
+    const {
+      username,
+      email,
+      password,
+      passwordConfirm,
+      error
+    } = this.state;
 
-    const isInvalid =
-      password !== passwordConfirm ||
-      password === "" ||
-      email === "" ||
-      username === "";
+    const isInvalid = 
+      password !== passwordConfirm || 
+      password === '' || 
+      email === '' || 
+      username === '';   
 
     return (
-      <form className='Signup' onSubmit={this.onSubmit}>
-        <h1>Fire and Ice</h1>
+      <form onSubmit={this.onSubmit}>
         <input
-          className='Signup-username'
-          name='username'
+          name="username"
           value={username}
           onChange={this.onChange}
-          type='text'
-          placeholder='Full Name'
+          type="text"
+          placeholder="Full Name"
         />
         <input
-          className='Signup-email'
-          name='email'
+          name="email"
           value={email}
           onChange={this.onChange}
-          type='text'
-          placeholder='Email Address'
+          type="text"
+          placeholder="Email Address"
         />
         <input
-          className='Signup-pass'
-          name='password'
+          name="password"
           value={password}
           onChange={this.onChange}
-          type='password'
-          placeholder='Password'
+          type="password"
+          placeholder="Password"
         />
         <input
-          className='Signup-passconfirm'
-          name='passwordConfirm'
+          name="passwordConfirm"
           value={passwordConfirm}
           onChange={this.onChange}
-          type='password'
-          placeholder='Confirm Password'
+          type="password"
+          placeholder="Confirm Password"
         />
-        <button className='Signup-btn' disabled={isInvalid} type='submit'>
-          Sign Up
-        </button>
+        <button disabled={isInvalid} type="submit">Sign Up</button>
 
-        {error && <p className='error-msg'>{error.message}</p>}
+        {error && <p>{error.message}</p>}
       </form>
     );
   }
@@ -110,16 +102,13 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <p>
-    Don't have an account?{" "}
-    <button>
-      <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-    </button>
+    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );
 
 const SignUpForm = compose(
   withRouter,
-  withFirebase
+  withFirebase,
 )(SignUpFormBase);
 
 export default SignUp;
