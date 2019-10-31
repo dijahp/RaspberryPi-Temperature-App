@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "../assets/Header.css";
-import SignOutButton from "./SignOut";
+import SignOutButton from "./SignOut/signout";
 
 class Header extends Component {
   constructor(props) {
