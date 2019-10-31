@@ -16,7 +16,6 @@ class Header extends Component {
       <div className='Header'>
         <h4>Welcome, {this.state.name}</h4>
         <SignOutButton />
-        <SignOut />
       </div>
     );
   }
