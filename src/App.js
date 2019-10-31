@@ -9,7 +9,7 @@ import SignOutButton from "./components/SignOut/signout";
 
 
 import * as ROUTES from "./constants/routes";
-import { withAuthentication } from "./components/Session";
+import { withAuthentication } from "./components/Session/session";
 
 const App = () => (
   <Router>
