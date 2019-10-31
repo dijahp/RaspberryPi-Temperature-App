@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Navigation from "./components/Navigation";
 import Dashboard from "./components/Dashboard";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
@@ -12,16 +11,14 @@ import { withAuthentication } from "./components/Session";
 
 const App = () => (
   <Router>
+    <SignIn>
     <div>
-      <Navigation />
-
-      <hr />
-
       <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
-      <Route path={ROUTES.SIGN_UP} component={SignUp} />
-      <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
-      <Route path={ROUTES.DASHBOARD} component={Dashboard} />
+      <Route exact path={ROUTES.SIGN_UP} component={SignUp} />
+      <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
+      <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
     </div>
+    </SignIn>
   </Router>
 );
 

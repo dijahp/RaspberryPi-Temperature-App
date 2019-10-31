@@ -2,15 +2,21 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { compose } from "recompose";
 
-import { SignUpLink } from "../SignUp/signup";
+import { SignUpLink } from "../SignUp";
+import { PasswordForgetLink } from "../PasswordForget";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import "../../assets/Signin.css";
+
+import { PasswordForgetForm } from "../PasswordForget";
+import PasswordChangeForm from "../PasswordChange";
 
 const SignIn = () => (
   <div className='body-signup'>
     <div className='Signin-container'>
       <SignInForm />
+      <PasswordForgetLink />
+      <PasswordForgetForm />
       <div className='SigninToSignup'>
         <SignUpLink />
       </div>
