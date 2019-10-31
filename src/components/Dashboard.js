@@ -11,7 +11,6 @@ import Thermo from "../assets/IMG/temperature.svg";
 import Humid from "../assets/IMG/humidity.svg";
 import Pressure from "../assets/IMG/pressure.svg";
 import Calendar from "../assets/IMG/calendar.svg";
-
 import Chart2 from "./Chart2";
 
 const date = new Date();

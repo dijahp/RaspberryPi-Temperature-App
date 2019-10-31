@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Dashboard from "./components/Dashboard";
+
 import SignIn from "./components/SignIn/signin";
 import SignUp from "./components/SignUp/signup";
-import SignOutButton from "./components/SignOut/SignOut";
+import SignOutButton from "./components/SignOut/signout";
 
 import * as ROUTES from "./constants/routes";
 
