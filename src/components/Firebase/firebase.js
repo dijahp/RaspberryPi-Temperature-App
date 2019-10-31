@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import * as firebase from 'firebase';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -17,6 +18,16 @@ class Firebase {
     app.initializeApp(firebaseConfig);
 
     this.auth = app.auth();
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log('This is the user: ', user.email)
+      } else {
+        // No user is signed in.
+        console.log('There is no logged in user');
+      }
+    });
+   
   }
 
   // ** Auth API ** 
