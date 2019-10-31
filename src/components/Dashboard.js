@@ -20,11 +20,16 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // AvailableSensors: ["testsensor", "testsensor2"]
-      AvailableSensors: {
-        name: ["testsensor", "testsensor2"],
-        location: ["Atlanta, GA", "Dallas, Texas"]
+
+      AvailableSensors: [{
+        name: "testsensor",
+        location: "Atlanta, GA"
+      }, 
+      {
+        name: "testsensor2",
+        location: "Dallas, Texas"
       }
+    ]
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

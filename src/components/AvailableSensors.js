@@ -13,7 +13,9 @@ class AvailableSensors extends Component {
     console.log(e.target.textContent);
   }
   render() {
-    const sensors = this.props.availableSensors.name;
+    const sensors = this.props.availableSensors;
+  
+
 
     return (
       <div className='AvailableSensors'>
@@ -21,7 +23,7 @@ class AvailableSensors extends Component {
         <ul>
           {sensors.map((sensor, index) => (
             <li onClick={e => this.handleClick(e)} key={index}>
-              {sensor}
+              {sensor.name}
             </li>
           ))}
         </ul>
