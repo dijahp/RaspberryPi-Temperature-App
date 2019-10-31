@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { compose } from "recompose"; // Used to organize higher-order components
 
+
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import "../../assets/Signup.css";
+
 
 const SignUp = () => (
   <div className='body-signup'>
