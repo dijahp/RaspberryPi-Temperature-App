@@ -11,13 +11,11 @@ import Thermo from "../assets/IMG/temperature.svg";
 import Humid from "../assets/IMG/humidity.svg";
 import Pressure from "../assets/IMG/pressure.svg";
 import Calendar from "../assets/IMG/calendar.svg";
-import { withAuthorization } from "./Session";
 
 import Chart2 from "./Chart2";
 
 const date = new Date();
 const today = date.getMonth() + 1 + "/" + date.getDate();
-const condition = authUser => !!authUser;
 
 class Dashboard extends Component {
   constructor(props) {
@@ -85,4 +83,4 @@ class Dashboard extends Component {
   }
 }
 
-export default withAuthorization(condition)(Dashboard);
+export default Dashboard;

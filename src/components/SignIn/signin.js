@@ -2,29 +2,21 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { compose } from "recompose";
 
-import { SignUpLink } from "../SignUp";
-import { PasswordForgetLink } from "../PasswordForget";
+import { SignUpLink } from "../SignUp/signup";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import "../../assets/Signin.css";
-
-import { PasswordForgetForm } from "../PasswordForget";
-import { withAuthorization } from "../Session";
 
 const SignIn = () => (
   <div className='body-signup'>
     <div className='Signin-container'>
       <SignInForm />
-      <PasswordForgetLink />
-      <PasswordForgetForm />
       <div className='SigninToSignup'>
         <SignUpLink />
       </div>
     </div>
   </div>
 );
-
-const condition = authUser => !!authUser;
 
 const INITIAL_STATE = {
   email: "",
@@ -86,7 +78,7 @@ class SignInFormBase extends Component {
         <button className='Signin-btn' disabled={isInvalid} type='submit'>
           Sign In
         </button>
-        <a href='#'>Forgot Your Password?</a>
+        <a href=''>Forgot Your Password?</a>
 
         {error && <p className='error-msg'>{error.message}</p>}
       </form>
@@ -99,6 +91,6 @@ const SignInForm = compose(
   withFirebase
 )(SignInFormBase);
 
-export default withAuthorization(condition)(SignIn);
+export default SignIn;
 
 export { SignInForm };
