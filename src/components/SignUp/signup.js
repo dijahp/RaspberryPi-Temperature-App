@@ -13,7 +13,8 @@ const SignUp = () => (
       <div className='SignupToSignin'>
         <h1>Sign In</h1>
         <p>Already have an account? Click the link below to sign in.</p>
-        <button>Sign In</button>
+        <button>
+        <Link to={ROUTES.SIGN_IN}>Sign In</Link></button>
       </div>
     </div>
   </div>
