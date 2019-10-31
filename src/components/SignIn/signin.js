@@ -9,7 +9,7 @@ import * as ROUTES from "../../constants/routes";
 import "../../assets/Signin.css";
 
 import { PasswordForgetForm } from "../PasswordForget";
-import PasswordChangeForm from "../PasswordChange";
+import { withAuthorization } from "../Session";
 
 const SignIn = () => (
   <div className='body-signup'>
@@ -23,6 +23,8 @@ const SignIn = () => (
     </div>
   </div>
 );
+
+const condition = authUser => !!authUser;
 
 const INITIAL_STATE = {
   email: "",
@@ -97,6 +99,6 @@ const SignInForm = compose(
   withFirebase
 )(SignInFormBase);
 
-export default SignIn;
+export default withAuthorization(condition)(SignIn);
 
 export { SignInForm };
