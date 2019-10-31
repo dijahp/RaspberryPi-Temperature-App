@@ -95,3 +95,85 @@
   color: #b33a3a;
   font-weight: 700;
 }
+
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .Signin {
+    width: 350px;
+    height: 350px;
+    background: #fff;
+    align-content: center;
+    border-radius: 8px;
+    display: grid;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .SigninToSignup {
+    display: grid;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 30px;
+    width: 250px;
+    height: 300px;
+    background: #1f1f1f;
+    color: #fff;
+    align-content: center;
+    justify-content: center;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  
+}
+
+
+@media (max-width: 767px) {
+  
+  .Signin-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Signin {
+    width: 350px;
+    height: 350px;
+    background: #fff;
+    align-content: center;
+    border-radius: 8px;
+    display: grid;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .SigninToSignup {
+    display: grid;
+    font-family: "Open Sans", sans-serif;
+    margin-top: -10px;
+    width: 350px;
+    height: 200px;
+    background: #1f1f1f;
+    color: #fff;
+    align-content: center;
+    justify-content: center;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .SigninToSignup button {
+    margin-top: 10px;
+    width: 220px;
+    height: 40px;
+    background: white;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: 0.3s all;
+  }
+  
+}

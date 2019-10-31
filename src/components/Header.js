@@ -10,7 +10,6 @@ class Header extends Component {
       name: "Test_Name"
     };
   }
-
   render() {
     return (
       <div className='Header'>

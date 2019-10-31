@@ -15,6 +15,7 @@
 .Signup-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
 }
 .Signup {
   width: 500px;
@@ -87,4 +88,151 @@
 
 .SignupToSignin button:hover {
   opacity: 0.7;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Signup {
+    width: 350px;
+    height: 350px;
+    background: #fff;
+    align-content: center;
+    border-radius: 8px;
+    display: grid;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+  }
+  .SignupToSignin {
+    display: grid;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 30px;
+    width: 250px;
+    height: 300px;
+    background: #1f1f1f;
+    color: #fff;
+    align-content: center;
+    justify-content: center;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .Signup input {
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid #d3d3d3;
+    margin: 5px 0;
+    padding-left: 10px;
+  }
+  
+  .Signup button {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    background: #1f1f1f;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    transition: 0.3s all;
+  }
+
+  .SignupToSignin h1 {
+    font-weight: 100;
+  }
+  .SignupToSignin p {
+    width: 200px;
+  }
+  .SignupToSignin button {
+    width: 200px;
+    height: 40px;
+    background: white;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    transition: 0.3s all;
+  }
+  
+
+  
+}
+
+@media (max-width: 767px) {
+  .Signup-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  
+  }
+
+  .Signup {
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    align-content: center;
+    border-radius: 8px;
+    display: grid;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .Signup h1 {
+    color: #7e7e7e;
+    font-weight: 100;
+    font-size: 1.4rem;
+  }
+
+
+  .Signup input {
+    width: 150px;
+    height: 25px;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid #d3d3d3;
+    margin: 5px 0;
+    padding-left: 10px;
+  }
+  
+  .Signup button {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    background: #1f1f1f;
+    color: #fff;
+    height: 30px;
+    border-radius: 20px;
+    transition: 0.3s all;
+  }
+
+
+  .SignupToSignin {
+    display: grid;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 0px;
+    width: 300px;
+    height: 300px;
+    background: #1f1f1f;
+    color: #fff;
+    align-content: center;
+    justify-content: center;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-top: -10px;
+  }
+
+  .SignupToSignin h1 {
+    font-weight: 100;
+    font-size: 1.4rem;
+  }
+  .SignupToSignin p {
+    width: 200px;
+    font-size: 1rem;
+  }
+  .SignupToSignin button {
+    width: 200px;
+    height: 30px;
+    background: white;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    transition: 0.3s all;
+  }
+ 
+  
 }
