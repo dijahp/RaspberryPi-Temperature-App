@@ -14,8 +14,9 @@ const SignUp = () => (
         <h1>Sign In</h1>
         <p>Already have an account? Click the link below to sign in.</p>
         <button>
-          <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-        </button>
+
+        <Link to={ROUTES.SIGN_IN}>Sign In</Link></button>
+
       </div>
     </div>
   </div>
