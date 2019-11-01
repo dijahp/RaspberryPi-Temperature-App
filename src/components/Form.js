@@ -5,6 +5,13 @@ import "../assets/Form.css";
 class Form extends Component {
   constructor(props) {
     super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    alert("test");
   }
 
   render() {
