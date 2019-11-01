@@ -15,6 +15,8 @@ class Form extends Component {
   }
 
   render() {
+
+    let {handleInputChange } = this.props;
     return (
       <div className='Form'>
         <form className='Form-Form' onSubmit={this.handleSubmit}>
@@ -22,11 +24,11 @@ class Form extends Component {
             <div className='sensor'>
               <label>Sensor:</label>
 
-              <input name='sensor' onChange={this.handleInputChange}></input>
+              <input name='sensor' onChange={handleInputChange}></input>
             </div>
             <div className='location '>
               <label>City, State:</label>
-              <input name='location' onChange={this.handleInputChange}></input>
+              <input name='location' onChange={handleInputChange}></input>
             </div>
           </div>
           <button type='submit' className='submit'>

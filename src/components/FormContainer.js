@@ -11,8 +11,8 @@ class FormContainer extends Component {
   render() {
     return (
       <div className='FormContainer'>
-        <Form />
-        <AvailableSensors availableSensors={this.props.availableSensors} handleInputChange={this.props.handleInputChange}/>
+        <Form handleInputChange={this.props.handleInputChange} />
+        <AvailableSensors availableSensors={this.props.availableSensors} />
       </div>
     );
   }
