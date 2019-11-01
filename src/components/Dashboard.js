@@ -32,22 +32,21 @@ class Dashboard extends Component {
     ]
     };
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleInputChange(e) {
-    const target = e.target;
-    const name = target.name;
-    const value = target.value;
+    const name = e.target[0].value;
+    const location = e.target[1].value; 
+    console.log(name)
 
     this.setState({
-      [name]: value
+     AvailableSensors: [...this.state.AvailableSensors, {name, location}]
     });
+
   }
 
-  handleSubmit() {
-    alert("test");
-  }
+
 
   render() {
     return (
@@ -77,7 +76,7 @@ class Dashboard extends Component {
             </div>
             <div className='Middle-right'>
               <div className='Form-container'>
-                <FormContainer availableSensors={this.state.AvailableSensors} />
+                <FormContainer availableSensors={this.state.AvailableSensors} handleInputChange={this.handleInputChange}/>
               </div>
             </div>
           </div>
