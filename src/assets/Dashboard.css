@@ -7,12 +7,14 @@ html{
 .Dashboard-container {
   display: grid;
   grid-template-columns: auto 5fr;
+
+  height: 100%;
 }
 .Dashboard {
   box-sizing: border-box;
 
   background: #f8f9fa;
-  height: 100vh;
+  height: 150vh;
 
   font-family: "Open Sans", sans-serif;
 }
