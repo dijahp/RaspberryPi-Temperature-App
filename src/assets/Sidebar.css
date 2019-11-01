@@ -20,6 +20,19 @@
 }
 
 
+
+@media (max-width: 1300px) {
+  
+.Sidebar{
+ width: 150px;
+}
+.Sidebar h1{
+  font-size: 1.4rem;
+ }
+.Sidebar a{
+  font-size: 1rem;
+ }
+}
 @media (max-width: 1024px) {
   
 .Sidebar{
