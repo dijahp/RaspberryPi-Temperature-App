@@ -36,12 +36,10 @@ class Dashboard extends Component {
   }
 
   handleInputChange(e) {
-    const name = e.target[0].value;
-    const location = e.target[1].value; 
-    console.log(name)
+
 
     this.setState({
-     AvailableSensors: [...this.state.AvailableSensors, {name, location}]
+     AvailableSensors: [...this.state.AvailableSensors, {[e.target.name]: e.target.value}]
     });
 
   }
