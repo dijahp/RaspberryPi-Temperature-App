@@ -10,7 +10,7 @@
 
 .Header h4 {
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   align-items: center;
   color: rgba(102, 97, 91, 0.7);
   font-weight: 200;
@@ -23,4 +23,9 @@
   background: #1f1f1f;
   border: none;
   color: #fff;
+}
+.Header button a {
+
+  color: #fff;
+  text-decoration: none;
 }
