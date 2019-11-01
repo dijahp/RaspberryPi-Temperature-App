@@ -1,20 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap");
 
 html{
-
+height: 100%;
   background: #f8f9fa;
 }
+
 .Dashboard-container {
   display: grid;
   grid-template-columns: auto 5fr;
 
-  height: 100%;
+  height: 100vh;
 }
 .Dashboard {
   box-sizing: border-box;
 
   background: #f8f9fa;
-  height: 150vh;
+  height: 100%;
 
   font-family: "Open Sans", sans-serif;
 }
