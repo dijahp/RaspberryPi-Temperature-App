@@ -19,14 +19,7 @@ class Firebase {
 
     this.auth = app.auth();
 
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        console.log('This is the user: ', user.email)
-      } else {
-        // No user is signed in.
-        console.log('There is no logged in user');
-      }
-    });
+   
    
   }
 
