@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import LineChart from "./Charts/linechart.js";
+import LineChart from "./Charts";
 import "../assets/Chart.css";
 
 class Chart extends Component {
