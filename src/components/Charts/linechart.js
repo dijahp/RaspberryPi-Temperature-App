@@ -4,23 +4,17 @@ import { XAxis } from "react-d3-ggplot";
 import { YAxis } from "react-d3-ggplot";
 import { Line } from "react-d3-ggplot";
 import { tsla } from "./data";
-
-import Firebase from '../Firebase/firebase';
-const fs = Firebase.fs;
+import { withFirebase } from "../Firebase";
 
 class LineChart extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      lineData: [{date: new Date("2019-05-22T10:18:08-04:00"), close: 204.53},
-      {date: new Date("2019-05-22T10:18:08-04:00"), close: 204.53}],
-      aes: ["date", "close"],
+      lineData: [{date: new Date("2019-05-22T10:18:08-04:00"), humidity: .53},
+      {date: new Date("2019-05-22T10:18:08-04:00"), humidity: .53}],
+      aes: ["date", "humidity"],
       dimensions: { width: window.innerWidth, height: 400, padding: 50 }
     };
-  }
-
-  sensorData = event => {
-    this.props.firebase.sensorData();
   }
 
   componentDidMount () {
@@ -30,16 +24,34 @@ class LineChart extends React.Component {
       date: new Date(day.date)
     }));
 
-    //querying firestore
-    fs.collection("sensorData")
-    .get()
-    .then(querySnapshot => {
-      const data = querySnapshot.docs.map(doc => doc.data());
-      console.log("FIRESTORE: ", data);
-      //this.setState({ users: data });
-    });
+    //querying firestore once
+    // let query = this.props.firebase.fs.collection('sensorData')
+    // query.orderBy('timestamp')
+    // .get()
+    // .then(querySnapshot => {
+    //   //const data = querySnapshot.docs.map(doc => doc.data());
+      // const data = querySnapshot.docs.map(doc => ({
+      //   date: (doc.data().timestamp.toDate()),
+      //   humidity: doc.data().humidity
+      // }));
+      // console.log("FIRESTORE: ", data);
+      // this.setState({ lineData: data });
+    // });
 
-    this.setState({ lineData: data });
+    //querying firestore with onSnapshot() listener
+    //UPDATE THIS TO SHOW WHICHEVER SENSOR IS SELECTED
+    //CURRENTLY SHOWING SENSOR1/mySecret1
+    let sensorRef = this.props.firebase.fs.collection('sensorData');
+    sensorRef.where("sensorKey", "==", "mySecret1")
+    .orderBy('timestamp')
+    .onSnapshot((querySnapshot) => {
+      const data = querySnapshot.docs.map(doc => ({
+        date: (doc.data().timestamp.toDate()),
+        humidity: doc.data().humidity
+      }));
+      console.log("FIRESTORE: ", data);
+      this.setState({ lineData: data });
+    })
 
   }
 
@@ -58,4 +70,4 @@ class LineChart extends React.Component {
   }
 }
 
-export default LineChart;
+export default withFirebase(LineChart);
