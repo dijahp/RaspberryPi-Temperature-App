@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import LineChart from "./Charts/linechart.js";
 import "../assets/Chart.css";
 
 class Chart extends Component {
   render() {
-    return <div className='Chart'>Empty Chart</div>;
+    return (
+      <div className="Chart">
+        <LineChart />
+      </div>
+    );
   }
 }
 
