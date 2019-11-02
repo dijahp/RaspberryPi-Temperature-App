@@ -7,6 +7,8 @@
     "firebase": "^7.2.2",
     "helmet": "^3.21.2",
     "react": "^16.11.0",
+    "react-bar-chart": "^0.1.2",
+    "react-d3-ggplot": "^1.2.1",
     "react-dom": "^16.11.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
