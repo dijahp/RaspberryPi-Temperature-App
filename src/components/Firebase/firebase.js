@@ -1,6 +1,6 @@
+import firebase from 'firebase';
 import app from 'firebase/app';
 import 'firebase/auth';
-
 import 'firebase/database';
 
 
@@ -19,9 +19,15 @@ class Firebase {
   constructor() {
     app.initializeApp(firebaseConfig);
 
+    this.appConfig = app;
+
     this.auth = app.auth();
 
+    //log-in database
     this.db = app.database();
+
+    //firestore connection
+    this.fs = app.firestore();
 
   }
 
@@ -38,6 +44,15 @@ class Firebase {
   user = uid => this.db.ref(`users/${uid}`);
   
   users = () => this.db.ref('users');
+
+  // ** Firestore Queries **
+
+  sensorData = () => this.fs.collection("sensorData")
+  // .get()
+  // .then(querySnapshot => {console.log("QUERYSNAPSHOT: ", querySnapshot)});
+
+
+
 }
 
 export default Firebase;
