@@ -1,8 +1,7 @@
 .Chart2 {
-  height: 300px;
-  width: 500px;
-  margin-right: -40px;
-  margin-left: 20px;
+  height: 350px;
+  width: 90%;
+  margin: 0 auto;
   margin-top: 20px;
   background: #fff;
   -webkit-box-shadow: 10px 10px 5px -9px rgba(0, 0, 0, 0.75);
@@ -12,22 +11,20 @@
   text-align: center;
 }
 
-@media (max-width: 1300px) {
-  
- .Chart2{
-   height: 250px;
- }
+/* @media (max-width: 1300px) {
+  .Chart2 {
+    height: 250px;
+  }
 }
 @media (max-width: 767px) {
-  .Chart2{
+  .Chart2 {
     width: 450px;
     margin: 0;
     margin-top: 10px;
   }
 }
 @media (max-width: 480px) {
-  .Chart2{
+  .Chart2 {
     width: 350px;
-  
   }
-}
+} */

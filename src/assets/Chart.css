@@ -1,7 +1,7 @@
 .Chart {
   height: 350px;
   width: 90%;
-  max-width:  700px;
+
   margin: 0 auto;
   background: #fff;
   -webkit-box-shadow: 10px 10px 5px -9px rgba(0, 0, 0, 0.75);
@@ -11,10 +11,8 @@
   text-align: center;
 }
 
-
 @media (max-width: 1300px) {
-  
- .Chart{
-   height: 250px;
- }
+  .Chart {
+    height: 250px;
+  }
 }
