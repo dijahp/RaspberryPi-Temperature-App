@@ -6,7 +6,7 @@ import { Line } from "react-d3-ggplot";
 import { tsla } from "./data";
 
 import Firebase from '../Firebase/firebase';
-const db = Firebase.fs();
+const fs = Firebase.fs;
 
 class LineChart extends React.Component {
   constructor (props) {
@@ -30,9 +30,8 @@ class LineChart extends React.Component {
       date: new Date(day.date)
     }));
 
-  
     //querying firestore
-    db.collection("sensorData")
+    fs.collection("sensorData")
     .get()
     .then(querySnapshot => {
       const data = querySnapshot.docs.map(doc => doc.data());
