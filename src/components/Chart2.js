@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import sensorBarChart from "./Charts";
 import "../assets/Chart2.css";
 import BarChartComp from "./Charts/barchart.js";
 
