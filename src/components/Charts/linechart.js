@@ -3,7 +3,6 @@ import { GEOMS } from "react-d3-ggplot";
 import { XAxis } from "react-d3-ggplot";
 import { YAxis } from "react-d3-ggplot";
 import { Line } from "react-d3-ggplot";
-import { tsla } from "./data";
 import { withFirebase } from "../Firebase";
 
 class LineChart extends React.Component {
@@ -18,26 +17,6 @@ class LineChart extends React.Component {
   }
 
   componentDidMount () {
-    //sample data coming from components/data.js
-    const data = tsla.chart.map(day => ({
-      ...day,
-      date: new Date(day.date)
-    }));
-
-    //querying firestore once
-    // let query = this.props.firebase.fs.collection('sensorData')
-    // query.orderBy('timestamp')
-    // .get()
-    // .then(querySnapshot => {
-    //   //const data = querySnapshot.docs.map(doc => doc.data());
-      // const data = querySnapshot.docs.map(doc => ({
-      //   date: (doc.data().timestamp.toDate()),
-      //   humidity: doc.data().humidity
-      // }));
-      // console.log("FIRESTORE: ", data);
-      // this.setState({ lineData: data });
-    // });
-
     //querying firestore with onSnapshot() listener
     //UPDATE THIS TO SHOW WHICHEVER SENSOR IS SELECTED
     //CURRENTLY SHOWING SENSOR1/mySecret1
@@ -49,7 +28,6 @@ class LineChart extends React.Component {
         date: (doc.data().timestamp.toDate()),
         humidity: doc.data().humidity
       }));
-      console.log("FIRESTORE: ", data);
       this.setState({ lineData: data });
     })
 
