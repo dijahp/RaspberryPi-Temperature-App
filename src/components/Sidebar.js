@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import * as ROUTES from "../constants/routes"
 import "../assets/Sidebar.css";
 
 class Sidebar extends Component {
@@ -7,11 +7,7 @@ class Sidebar extends Component {
     return (
       <div className='Sidebar-section'>
         <h1>Fire and Ice</h1>
-        <nav>
-          <div className='Nav-item'>
-            <a href='#'>Dashboard</a>
-          </div>
-        </nav>
+
       </div>
     );
   }
