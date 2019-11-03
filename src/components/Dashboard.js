@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "../assets/Dashboard.css";
 import Header from "./Header";
 import Chart from "./Chart";
-
+import { withFirebase } from './Firebase';
 import Card from "./Card";
 
 import Sidebar from "./Sidebar";
@@ -29,7 +29,9 @@ class Dashboard extends Component {
           name: "testsensor2",
           location: "Dallas, Texas"
         }
-      ]
+      ],
+      currentTemp: 30,
+      currentHumidity: 43
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -42,6 +44,28 @@ class Dashboard extends Component {
       ]
     });
   }
+
+  componentDidMount () {
+    //querying firestore with onSnapshot() listener
+    //UPDATE THIS TO SHOW WHICHEVER SENSOR IS SELECTED
+    //CURRENTLY SHOWING SENSOR1/mySecret1
+    let sensorRef = this.props.firebase.fs.collection('sensorData');
+    sensorRef.where("sensorKey", "==", "mySecret1")
+    .orderBy('timestamp')
+    .onSnapshot((querySnapshot) => {
+      const humidArray = querySnapshot.docs.map(doc => (doc.data().humidity));
+      let humidSum = humidArray.reduce((previous, current) => current += previous);
+      const humidAve = humidSum / humidArray.length;
+
+      const tempArray = querySnapshot.docs.map(doc => (doc.data().temp));
+      let tempSum = tempArray.reduce((previous, current) => current += previous);
+      const tempAve = tempSum / tempArray.length;
+
+      this.setState({ currentTemp: tempAve.toFixed(2), 
+        currentHumidity: humidAve.toFixed(2)  });
+    })
+
+  };
 
   render() {
     return (
@@ -56,9 +80,10 @@ class Dashboard extends Component {
             <Card
               iconImg={Thermo}
               cardDesc='Current Temperature'
-              cardData='30ºF'
+              cardData={this.state.currentTemp}
+              //'30ºF'
             />
-            <Card iconImg={Humid} cardDesc='Humidity' cardData='43%' />
+            <Card iconImg={Humid} cardDesc='Humidity' cardData={this.state.currentHumidity} />
             <Card iconImg={Pin} cardDesc='Location' cardData='Atlanta' />
             <Card iconImg={Calendar} cardDesc='Date' cardData={today} />
           </div>
@@ -72,4 +97,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default withFirebase(Dashboard);
