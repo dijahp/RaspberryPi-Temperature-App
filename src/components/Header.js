@@ -8,10 +8,11 @@ class Header extends Component {
   state = { currentUser: null };
 
   componentDidMount() {
-    this.authSubscription = firebase.auth().onAuthStateChanged(user => {
+    this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
+      const username = user.email.split("@",1);
       this.setState({
         loading: false,
-        user: user.email
+        user: username,
       });
     });
   }
