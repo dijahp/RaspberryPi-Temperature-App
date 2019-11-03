@@ -39,6 +39,7 @@ class LineChart extends React.Component {
     const { lineData, aes, dimensions } = this.state;
     return (
       <div className="Linechart">
+        <p>{this.props.selectedSensor}</p>
         <GEOMS data={lineData} aes={aes} dimensions={dimensions}>
           <XAxis />
           <YAxis />

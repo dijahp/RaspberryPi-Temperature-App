@@ -31,13 +31,18 @@ class Dashboard extends Component {
         }
       ],
       currentTemp: 30,
-      currentHumidity: 43
+      currentHumidity: 43,
+      selectedSensor: 'mySecret1'
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSensor = this.handleSensor.bind(this);
 
   }
 
-
+  handleSensor = (sensorValue) => {
+    this.setState({selectedSensor: sensorValue});
+    //console.log('Sensor selected is: ' + this.state.selectedSensor);
+}
 
   handleInputChange(e) {
     this.setState({
@@ -50,11 +55,9 @@ class Dashboard extends Component {
 
   componentDidMount() {
     //querying firestore with onSnapshot() listener
-    //UPDATE THIS TO SHOW WHICHEVER SENSOR IS SELECTED
-    //CURRENTLY SHOWING SENSOR1/mySecret1
+    //queries this.state.selectedSensor
     let sensorRef = this.props.firebase.fs.collection('sensorData');
-
-    sensorRef.where("sensorKey", "==", "mySecret1")
+    sensorRef.where("sensorKey", "==", this.state.selectedSensor)
       .orderBy('timestamp')
       .onSnapshot((querySnapshot) => {
         const humidArray = querySnapshot.docs.map(doc => (doc.data().humidity));
@@ -77,7 +80,7 @@ class Dashboard extends Component {
     return (
       <div className='Dashboard-container'>
         <div className='Sidebar'>
-          <Sidebar />
+          <Sidebar handleSensor={this.handleSensor} selectedSensor = {this.state.selectedSensor}/>
         </div>
         <div className='Dashboard'>
           <Header />
@@ -94,7 +97,7 @@ class Dashboard extends Component {
             <Card iconImg={Calendar} cardDesc='Date' cardData={today} />
           </div>
           <div className='Chart-section'>
-            <Chart />
+            <Chart selectedSensor = {this.state.selectedSensor}/>
             <Chart2 />
           </div>
         </div>
