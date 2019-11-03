@@ -16,7 +16,6 @@ class Chart extends Component {
       aes: ["date", "humidity"],
       dimensions: { width: window.innerWidth, height: 350, padding: 50 }
     };
-    //this.selectedSensor = { selectedSensor: 'TEST' }
   }
 
   componentDidMount() {
@@ -51,14 +50,14 @@ class Chart extends Component {
     const { lineData, aes, dimensions } = this.state;
     return (
       <div className="Chart">
-        <div className="Linechart">
-          <p>{this.props.selectedSensor}</p>
+        {/* <div className="Linechart"> */}
+          {/* <p>{this.props.selectedSensor}</p> */}
           <GEOMS data={lineData} aes={aes} dimensions={dimensions}>
             <XAxis />
             <YAxis />
             <Line />
           </GEOMS>
-        </div>
+        {/* </div> */}
       </div>
     );
   }
