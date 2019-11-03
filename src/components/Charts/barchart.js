@@ -1,6 +1,7 @@
 import React from 'react';
 import BarChart from 'react-bar-chart';
 import { withFirebase } from '../Firebase';
+import '../../assets/Barchart.css'
 
 
 const margin = { top: 20, right: 20, bottom: 30, left: 40 };
@@ -9,7 +10,7 @@ class BarChartComp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            width: 500,
+            width: 900,
             tempData: [
                 { text: 'Sensor1', value: 500 },
                 { text: 'Sensor2', value: 300 }
@@ -58,11 +59,11 @@ class BarChartComp extends React.Component {
     render() {
         const { tempData } = this.state;
         return (
-            <div ref='root' className="Barchart">
-                <div style={{ width: '50%' }}>
+            <div ref='root' className="Barchart-container">
+                <div style={{ width: '50%' }} className="Barchart">
                     <BarChart ylabel='Average Temperature'
                         width={this.state.width}
-                        height={500}
+                        height={400}
                         margin={margin}
                         data={tempData}
                         onBarClick={this.handleBarClick} />
