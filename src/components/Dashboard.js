@@ -73,7 +73,28 @@ class Dashboard extends Component {
           currentHumidity: humidAve.toFixed(2)
         });
       })
+  };
 
+  componentDidUpdate() {
+    //querying firestore with onSnapshot() listener
+    //queries this.state.selectedSensor
+    let sensorRef = this.props.firebase.fs.collection('sensorData');
+    sensorRef.where("sensorKey", "==", this.state.selectedSensor)
+      .orderBy('timestamp')
+      .onSnapshot((querySnapshot) => {
+        const humidArray = querySnapshot.docs.map(doc => (doc.data().humidity));
+        let humidSum = humidArray.reduce((previous, current) => current += previous);
+        const humidAve = humidSum / humidArray.length;
+
+        const tempArray = querySnapshot.docs.map(doc => (doc.data().temp));
+        let tempSum = tempArray.reduce((previous, current) => current += previous);
+        const tempAve = tempSum / tempArray.length;
+
+        this.setState({
+          currentTemp: tempAve.toFixed(2),
+          currentHumidity: humidAve.toFixed(2)
+        });
+      })
   };
 
   render() {
