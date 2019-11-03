@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+
 import "../assets/Header.css";
 import SignOutButton from "./SignOut/signout";
-import firebase from 'firebase';
+import firebase from "firebase";
 
-class Header extends React.Component {
-  state = { currentUser: null }
+class Header extends Component {
+  state = { currentUser: null };
 
   componentDidMount() {
     this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
@@ -22,10 +22,9 @@ class Header extends React.Component {
   }
 
   render() {
-
     return (
       <div className='Header'>
-       <h4>Welcome, {this.state.user}</h4>
+        <h4>Welcome, {this.state.user}</h4>
         <SignOutButton />
       </div>
     );

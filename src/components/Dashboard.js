@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+
 import "../assets/Dashboard.css";
 import Header from "./Header";
 import Chart from "./Chart";

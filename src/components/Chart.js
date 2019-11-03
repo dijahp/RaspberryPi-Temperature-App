@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+
 import LineChart from "./Charts/linechart";
 import "../assets/Chart.css";
 
