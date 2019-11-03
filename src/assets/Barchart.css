@@ -1,0 +1,17 @@
+
+g rect{
+    fill: #1f1f1f;
+
+  }
+.bar{
+    width: 20%;
+    transform-origin: 20%;
+    transform: translateX(100px)
+
+}
+
+  g text{
+font-size: 12px;
+font-weight: 600;
+  }
+
