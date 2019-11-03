@@ -1,0 +1,17 @@
+.Linechart {
+    width: 100%;
+    height: 350px;
+    
+}
+
+.Linechart svg{
+width: 95%;
+height: 95%;
+}
+
+@media (max-width: 1300px) {
+    .Linechart svg{
+zoom: 0.75;
+
+    }
+  }
