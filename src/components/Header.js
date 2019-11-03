@@ -9,18 +9,28 @@ class Header extends Component {
 
   componentDidMount() {
     this.authSubscription = firebase.auth().onAuthStateChanged(user => {
+      let useremail = user.email.split('@')[0];
+      useremail = useremail.charAt(0).toUpperCase() + useremail.slice(1);
+
       this.setState({
         loading: false,
-        user: user.email
+        user: useremail
       });
+
+
     });
+
   }
 
   componentWillUnmount() {
     this.authSubscription();
+    let useremail = this.state.user;
+
+    console.log(useremail);
   }
 
   render() {
+
     return (
       <div className='Header'>
         <h4>Welcome, {this.state.user}</h4>
