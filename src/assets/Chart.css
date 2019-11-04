@@ -18,7 +18,7 @@
 
 @media (max-width: 1300px) {
   .Chart {
-    height: 300px;
+    height: 350px;
   }
 }
 
@@ -41,7 +41,7 @@ stroke: #0000e5;
 
 @media (max-width: 1300px) {
   .Chart {
-    height: 300px;
+    height: 350px;
     
   }
   .Chart svg{
