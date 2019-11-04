@@ -51,7 +51,7 @@ class Chart extends Component {
     return (
       <div className="Chart Chartblue">
         {/* <h className="chartTitle">Humidity</h> */}
-        <p className="chartTitle">Humidity</p>
+        <p className="Card-title">Humidity</p>
           <GEOMS data={lineData} aes={aes} dimensions={dimensions}>
             <XAxis />
             <YAxis />
