@@ -1,8 +1,6 @@
 # Fire and Ice (with a slice of pie)
 
-In this app, users can track
-
-**Currently working on implementing a responsive UI**
+Fire and Ice lets you optimize and personalize your spaces. Set up a $20 raspberry pi device in any room (set up multiple!) and keep track of each room's temperature and humidity in our easy-to-use dashboard! The dashboard shows you both metrics over time and a snapshot average. Easily switch between sensors, so you can compare different rooms, and track your space's environment in real time!
 
 ## Getting Started
 
@@ -18,6 +16,7 @@ Javascript, Code Editor
 * [Firebase Realtime Database](https://firebase.google.com/products/realtime-database/) - The database used
 * [Raspberry Pi API]() - Raspberry API
 * [Create React App](https://github.com/facebook/create-react-app) - React boilerplate Code
+* [Express](https://expressjs.com/) - React boilerplate Code
 
 ## Authors
 
