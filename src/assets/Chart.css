@@ -11,6 +11,11 @@
   text-align: center;
 }
 
+.chartTitle{
+  font-size: 1.3rem;
+
+}
+
 @media (max-width: 1300px) {
   .Chart {
     height: 250px;
@@ -20,15 +25,27 @@
 .Chart svg{
 width: 90%;
 height: 98%;
+margin-top: -30px; 
+
 }
+
 
 .Chart svg g path{
 stroke-width: 3;
 }
+.Chartblue svg g path:not(.domain){
+stroke: #0000e5;
+}
+
+
 
 @media (max-width: 1300px) {
+  .Chart {
+    height: 300px;
+    
+  }
   .Chart svg{
-zoom: 0.75;
+zoom: 0.9;
   }
 }
 

@@ -49,13 +49,13 @@ class Chart extends Component {
   render() {
     const { lineData, aes, dimensions } = this.state;
     return (
-      <div className="Chart">
+      <div className="Chart Chartblue">
         {/* <h className="chartTitle">Humidity</h> */}
         <p className="chartTitle">Humidity</p>
           <GEOMS data={lineData} aes={aes} dimensions={dimensions}>
             <XAxis />
             <YAxis />
-            <Line />
+            <Line className="test"/>
           </GEOMS>
       </div>
     );
