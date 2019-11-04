@@ -11,9 +11,9 @@ class Chart extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      lineData: [{ date: new Date("2019-05-22T10:18:08-04:00"), humidity: .53 },
-      { date: new Date("2019-05-22T10:18:08-04:00"), humidity: .53 }],
-      aes: ["date", "humidity"],
+      lineData: [{ date: new Date("2019-05-22T10:18:08-04:00"), temperature: 53 },
+      { date: new Date("2019-05-22T10:18:08-04:00"), temperature: 53 }],
+      aes: ["date", "temperature"],
       dimensions: { width: window.innerWidth, height: 350, padding: 50 }
     };
   }
@@ -26,7 +26,7 @@ class Chart extends Component {
       .onSnapshot((querySnapshot) => {
         const data = querySnapshot.docs.map(doc => ({
           date: (doc.data().timestamp.toDate()),
-          humidity: doc.data().humidity
+          temperature: (doc.data().temp * (9 / 5) + 32),
         }));
         this.setState({ lineData: data });
       })
@@ -40,7 +40,7 @@ class Chart extends Component {
       .onSnapshot((querySnapshot) => {
         const data = querySnapshot.docs.map(doc => ({
           date: (doc.data().timestamp.toDate()),
-          humidity: doc.data().humidity
+          temperature: (doc.data().temp * (9 / 5) + 32)
         }));
         this.setState({ lineData: data });
       })
@@ -50,14 +50,13 @@ class Chart extends Component {
     const { lineData, aes, dimensions } = this.state;
     return (
       <div className="Chart">
-        {/* <div className="Linechart"> */}
-          {/* <p>{this.props.selectedSensor}</p> */}
+        {/* <h className="chartTitle">Temperature</h> */}
+        <p className="chartTitle">Temperature</p>
           <GEOMS data={lineData} aes={aes} dimensions={dimensions}>
             <XAxis />
             <YAxis />
             <Line />
           </GEOMS>
-        {/* </div> */}
       </div>
     );
   }

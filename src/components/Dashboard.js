@@ -120,7 +120,7 @@ class Dashboard extends Component {
           </div>
           <div className='Chart-section'>
             <Chart selectedSensor={this.state.selectedSensor} />
-            <Chart2 />
+            <Chart2 selectedSensor={this.state.selectedSensor}/>
           </div>
         </div>
       </div>
