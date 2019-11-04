@@ -92,8 +92,8 @@ class Dashboard extends Component {
         tempAve = (tempAve) * 9 / 5 + 32;
 
         this.setState({
-          currentTemp: tempAve.toFixed(2) + "°F",
-          currentHumidity: humidAve.toFixed(2)
+          currentTemp: tempAve.toFixed(1) + "°F",
+          currentHumidity: humidAve.toFixed(1)
         });
       })
   };
