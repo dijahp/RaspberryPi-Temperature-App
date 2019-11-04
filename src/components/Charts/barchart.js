@@ -29,7 +29,8 @@ class BarChartComp extends React.Component {
                 //query for sensor 1
                 const sensor1Temp = querySnapshot.docs.map(doc => (doc.data().temp));
                 let sum1 = sensor1Temp.reduce((previous, current) => current += previous);
-                let avg1 = sum1 / sensor1Temp.length;
+                let avg1 = (sum1 / sensor1Temp.length);
+                avg1 = avg1 * 9 / 5 + 32;
 
                 //update state of temp1
                 const index1 = this.state.tempData.findIndex(sensor => sensor.text === "Sensor1"),
@@ -46,6 +47,7 @@ class BarChartComp extends React.Component {
                 const sensor2Temp = querySnapshot.docs.map(doc => (doc.data().temp));
                 let sum2 = sensor2Temp.reduce((previous, current) => current += previous);
                 let avg2 = sum2 / sensor2Temp.length;
+                avg2 = avg2 * 9 / 5 + 32;
 
                 //update state of temp2
                 const index2 = this.state.tempData.findIndex(sensor => sensor.text === "Sensor2"),

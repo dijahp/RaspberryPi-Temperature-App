@@ -88,10 +88,11 @@ class Dashboard extends Component {
 
         const tempArray = querySnapshot.docs.map(doc => (doc.data().temp));
         let tempSum = tempArray.reduce((previous, current) => current += previous);
-        const tempAve = tempSum / tempArray.length;
+        let tempAve = tempSum / tempArray.length;
+        tempAve = (tempAve) * 9 / 5 + 32;
 
         this.setState({
-          currentTemp: tempAve.toFixed(2) + "°C",
+          currentTemp: tempAve.toFixed(2) + "°F",
           currentHumidity: humidAve.toFixed(2)
         });
       })
