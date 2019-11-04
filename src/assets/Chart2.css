@@ -10,8 +10,21 @@
   border-radius: 20px;
   text-align: center;
 }
-.Chart2 svg{
-  zoom: .9;
+.Chart2 svg {
+  zoom: 0.9;
+}
+
+@media (max-height:800px) {
+  .Chart2 {
+    height: 315px;
+
+    
+  }
+  .Chart2 svg{
+zoom: .8;
+margin-left: 20px;
+  }
+  
 }
 
 /* @media (max-width: 1300px) {

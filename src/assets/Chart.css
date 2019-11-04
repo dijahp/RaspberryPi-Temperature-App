@@ -31,3 +31,15 @@ stroke-width: 3;
 zoom: 0.75;
   }
 }
+
+@media (max-height:800px) {
+  .Chart {
+    height: 300px;
+    
+  }
+  .Chart svg{
+zoom: .9;
+
+  }
+  
+}

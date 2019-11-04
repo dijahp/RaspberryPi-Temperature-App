@@ -32,3 +32,17 @@
   margin: 0;
   margin-top: -10px;
 }
+
+
+@media (max-height:800px) {
+  .Card{
+    height: 110px;
+  }
+  .Card-items{
+    height: 110px;
+  }
+  .Card-data{
+    font-size: 1.8rem;
+  }
+  
+}
