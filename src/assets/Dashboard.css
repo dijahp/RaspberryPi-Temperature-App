@@ -22,7 +22,7 @@ html {
 
 .Card-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr ;
 }
 .Card-section img {
   width: 70px;
@@ -34,9 +34,12 @@ html {
 }
 
 @media (max-width: 767px) {
+  .Card-section img {
+    width: 60px;
+  }
   .Card-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .Dashboard-middle {

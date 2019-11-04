@@ -115,7 +115,7 @@ class Dashboard extends Component {
             //'30ºF'
             />
             <Card iconImg={Humid} cardDesc='Humidity' cardData={this.state.currentHumidity} />
-            <Card iconImg={Pin} cardDesc='Location' cardData='Atlanta' />
+
             <Card iconImg={Calendar} cardDesc='Date' cardData={today} />
           </div>
           <div className='Chart-section'>

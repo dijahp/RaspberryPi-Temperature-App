@@ -26,6 +26,7 @@
 .Card-title {
   color: rgba(102, 97, 91, 0.8);
   margin-top: 10px;
+  font-size: 1.3rem;
 }
 .Card-data {
   font-size: 2rem;
@@ -33,8 +34,14 @@
   margin-top: -10px;
 }
 
+@media (max-width:787px){
+  .Card-title{
+    font-size: 1.1rem;
+  }
+}
 
 @media (max-height:800px) {
+
   .Card{
     height: 110px;
   }
