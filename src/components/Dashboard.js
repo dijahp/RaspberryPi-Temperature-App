@@ -40,9 +40,9 @@ class Dashboard extends Component {
   }
 
   handleSensor = (sensorValue) => {
-    this.setState({selectedSensor: sensorValue});
+    this.setState({ selectedSensor: sensorValue });
     //console.log('Sensor selected is: ' + this.state.selectedSensor);
-}
+  }
 
   handleInputChange(e) {
     this.setState({
@@ -91,7 +91,7 @@ class Dashboard extends Component {
         const tempAve = tempSum / tempArray.length;
 
         this.setState({
-          currentTemp: tempAve.toFixed(2),
+          currentTemp: tempAve.toFixed(2) + "°C",
           currentHumidity: humidAve.toFixed(2)
         });
       })
@@ -101,7 +101,7 @@ class Dashboard extends Component {
     return (
       <div className='Dashboard-container'>
         <div className='Sidebar'>
-          <Sidebar handleSensor={this.handleSensor} selectedSensor = {this.state.selectedSensor}/>
+          <Sidebar handleSensor={this.handleSensor} selectedSensor={this.state.selectedSensor} />
         </div>
         <div className='Dashboard'>
           <Header />
@@ -118,7 +118,7 @@ class Dashboard extends Component {
             <Card iconImg={Calendar} cardDesc='Date' cardData={today} />
           </div>
           <div className='Chart-section'>
-            <Chart selectedSensor = {this.state.selectedSensor}/>
+            <Chart selectedSensor={this.state.selectedSensor} />
             <Chart2 />
           </div>
         </div>

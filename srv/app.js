@@ -2,12 +2,12 @@ const path = require("path");
 const express = require("express");
 const helmet = require("helmet");
 const app = express();
-const env = require("dotenv").config({path: '../.env'});
+const env = require("dotenv").config({ path: '../.env' });
 
 const firebase = require("firebase");
 //require("firebase/firestore");
 
-firebase.initializeApp( {
+firebase.initializeApp({
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   databaseURL: process.env.REACT_APP_DATABASE_URL,
@@ -45,27 +45,28 @@ app.use((req, res, next) => {
 
 // handle a POST request to consume raspi sensor data
 app.post("/sensor", (req, res, next) => {
+  console.log(req.body)
   //database code
   var sensorRef = db.collection('sensorData');
 
   //function to query database for the auth token
   var checkAuth = db.collection('sensorMeta')
-  .where("sensorKey", "==", req.header("X-Auth-Token"))
-  .get()
-    .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            //console.log(doc.id, " => ", doc.data());
-        });
+    .where("sensorKey", "==", req.header("X-Auth-Token"))
+    .get()
+    .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        // doc.data() is never undefined for query doc snapshots
+        //console.log(doc.id, " => ", doc.data());
+      });
     })
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
+    .catch(function (error) {
+      console.log("Error getting documents: ", error);
     });
 
   //function to push sensor data to the sensorData document
   var setWithMerge = sensorRef.add({
     sensorKey: req.header("X-Auth-Token"),
-    timestamp:firebase.firestore.FieldValue.serverTimestamp(),
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     temp: req.body.temperature,
     humidity: req.body.humidity
   }).then(ref => {
