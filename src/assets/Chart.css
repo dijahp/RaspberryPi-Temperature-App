@@ -1,5 +1,5 @@
 .Chart {
-  height: 350px;
+  height: 400px;
   width: 90%;
 
   margin: 0 auto;
@@ -13,7 +13,7 @@
 
 @media (max-width: 1300px) {
   .Chart {
-    height: 250px;
+    height: 300px;
   }
 }
 
@@ -34,7 +34,7 @@ zoom: 0.75;
 
 @media (max-height:800px) {
   .Chart {
-    height: 300px;
+    height: 350px;
     
   }
   .Chart svg{
