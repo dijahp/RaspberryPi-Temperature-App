@@ -19,7 +19,7 @@ class Chart extends Component {
   }
 
   componentDidMount() {
-    //querying firestore with onSnapshot() listener
+    //querying firestore with get()
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.props.selectedSensor)
       .orderBy('timestamp')
@@ -33,7 +33,7 @@ class Chart extends Component {
   }
 
   componentDidUpdate() {
-    //querying firestore with onSnapshot() listener
+    //querying firestore with get()
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.props.selectedSensor)
       .orderBy('timestamp')
