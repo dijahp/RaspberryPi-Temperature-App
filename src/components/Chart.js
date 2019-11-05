@@ -31,12 +31,6 @@ class Chart extends Component {
         }));
         this.setState({ lineData: data });
       })
-
-      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
-      });
-
-      // Stop listening for changes
-      unsub();
   }
 
   componentDidUpdate() {
@@ -52,13 +46,6 @@ class Chart extends Component {
         }));
         this.setState({ lineData: data });
       });
-
-      // [START detach_listener]
-      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
-      });
-
-      // Stop listening for changes
-      unsub();
   }
 
   render() {

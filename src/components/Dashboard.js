@@ -74,12 +74,6 @@ class Dashboard extends Component {
           currentHumidity: humidAve.toFixed(2)
         });
       } );
-
-      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
-      });
-
-      // Stop listening for changes
-      unsub();
   };
 
   componentDidUpdate() {
@@ -104,11 +98,6 @@ class Dashboard extends Component {
           currentHumidity: humidAve.toFixed(1)
         });
       });
-      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
-      });
-
-      // Stop listening for changes
-      unsub();
   };
 
   render() {

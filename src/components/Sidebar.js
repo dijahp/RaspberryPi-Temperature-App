@@ -36,12 +36,7 @@ class Sidebar extends Component {
             sensorMap.push({"friendlyName": newItem, "sensorKey": sensorKey});
           }
         }) });
-        
-        let unsub = this.props.firebase.fs.collection('sensorMeta').onSnapshot(() => {
-        });
-  
-        // Stop listening for changes
-        unsub();
+      
     
     return (
       <div className='Sidebar-section' >
