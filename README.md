@@ -1,8 +1,9 @@
 # Fire and Ice with a Slice of Raspberry Pi &nbsp; &nbsp; <img src="./src/assets/IMG/raspberry-pi.svg" width="60" height="60" />
 
 
-Fire and Ice provides a dashboard with user authentication for monitoring different environmental conditions with Raspberry Pi devices. You can set up a \$35 Raspberry Pi device in any room (or even set up multiple devices!) and keep track of each room's temperature and humidity, or other environmental factors depending on the sensors you have to connect to your Pi. The dashboard shows you both metrics over time and a snapshot average. Easily switch between sensors, so you can compare different rooms, and track your space's environment in real time!
+The "Fire and Ice" application provides a dashboard with user authentication for monitoring different environmental conditions with Raspberry Pi devices. You can set up a \$35 Raspberry Pi device in any room (or even set up multiple devices!) and keep track of each room's temperature and humidity, or other environmental factors depending on the sensors you have to connect to your Pi. The dashboard shows you both metrics over time and a snapshot average. Easily switch between sensors, so you can compare different rooms, and track your space's environment in real time!
 
+&nbsp;
 
 
 ## Getting Started
@@ -19,14 +20,15 @@ Fire and Ice provides a dashboard with user authentication for monitoring differ
    ```
    npm start
    ```
-
-
+ &nbsp;
+ 
 ## Prerequisites & Suggestions
 
 - Text/code editor (we highly recommend Visual Studio Code!)
 - Node.js installation
 - Basic working knowledge of JavaScript & React
 
+&nbsp;
 
 ## Built With
 
@@ -40,12 +42,14 @@ Fire and Ice provides a dashboard with user authentication for monitoring differ
 - [react d3 ggplot](https://www.npmjs.com/package/react-d3-ggplot) - Data visualizations
 - [Recompose](https://recompose.docsforhumans.com/) - Utility for pipelining higher order components in React
 
+&nbsp;
 
 ## Supporting Repositories
 
 - [RaspberryPi-Temperature-Sensor](https://github.com/alankleindev/RaspberryPi-Temperature-Sensor) - Raspberry Pi Sensor Code for DigitalCrafts fire-and-ice Project
 - [RaspberryPi-Temperature-Express](https://github.com/alankleindev/RaspberryPi-Temperature-Express) - REST API To Consume Raspberry Pi Sensor Data and Publish to Cloud Firestore
 
+&nbsp;
 
 ## Authors
 
