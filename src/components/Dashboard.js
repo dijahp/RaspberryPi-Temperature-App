@@ -76,7 +76,9 @@ class Dashboard extends Component {
       } );
   };
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
+
+    if(prevState !== this.state) {
     //querying firestore with get()
     //queries this.state.selectedSensor
     let sensorRef = this.props.firebase.fs.collection('sensorData');
@@ -98,6 +100,7 @@ class Dashboard extends Component {
           currentHumidity: humidAve.toFixed(1)
         });
       });
+    };
   };
 
   render() {

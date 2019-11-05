@@ -33,7 +33,9 @@ class Chart extends Component {
       })
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
+
+    if(prevState !== this.state) {
     //querying firestore with get()
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.props.selectedSensor)
@@ -47,6 +49,7 @@ class Chart extends Component {
         this.setState({ lineData: data });
       });
   }
+};
 
   render() {
     const { lineData, aes, dimensions } = this.state;
