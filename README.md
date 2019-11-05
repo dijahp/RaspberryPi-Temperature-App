@@ -15,10 +15,10 @@ Code Editor, Node.js, JavaScript
 - [Firebase Authentication](https://firebase.google.com/products/auth/) - The authentication method used
 - [Firebase Cloud Firesstore ](https://firebase.google.com/products/firestore/) - The database used
 - [Raspberry Pi Model 4 B]() - Raspberry Pi Hardware
-- [DHT22 Temperature and Humidity Sensor](https://smile.amazon.com/gp/product/B07H2RP26F/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
+- [DHT22](https://smile.amazon.com/gp/product/B07H2RP26F/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) - Temperature/Humidity Sensor
 - [Create React App](https://github.com/facebook/create-react-app) - React boilerplate Code
 - [Express](https://expressjs.com/) - Web framework for Node.js
-- [react d3 ggplot] - Data visualizations(https://www.npmjs.com/package/react-d3-ggplot)
+- [react d3 ggplot](https://www.npmjs.com/package/react-d3-ggplot) - Data visualizations
 
 ## Authors
 
