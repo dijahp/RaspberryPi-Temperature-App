@@ -73,7 +73,13 @@ class Dashboard extends Component {
           currentTemp: tempAve.toFixed(2),
           currentHumidity: humidAve.toFixed(2)
         });
-      })
+      } );
+
+      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
+      });
+
+      // Stop listening for changes
+      unsub();
   };
 
   componentDidUpdate() {
@@ -97,7 +103,12 @@ class Dashboard extends Component {
           currentTemp: tempAve.toFixed(1) + "°F",
           currentHumidity: humidAve.toFixed(1)
         });
-      })
+      });
+      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
+      });
+
+      // Stop listening for changes
+      unsub();
   };
 
   render() {
