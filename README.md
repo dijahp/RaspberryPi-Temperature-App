@@ -55,5 +55,5 @@ The "Fire and Ice" application provides a dashboard with user authentication for
 
 - [**Sherri Booher**](https://github.com/sherribooher)
 - [**Alan Klein**](https://github.com/alankleindev)
-- [**Samhita Noone**](https://github.com/samhitanoone)
+- [**Samhita Noone**](https://www.linkedin.com/in/samhitanoone/)
 - [**Khadijah Parks**](https://github.com/dijahp)
