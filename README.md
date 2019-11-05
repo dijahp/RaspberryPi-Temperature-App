@@ -23,7 +23,7 @@ Code Editor, Node.js, JavaScript
 ## Supporting Repo's
 
 - [RaspberryPi-Temperature-Sensor](https://github.com/alankleindev/RaspberryPi-Temperature-Sensor) - Raspberry Pi Sensor Code for DigitalCrafts fire-and-ice Project
-- [RaspberryPi-Temperature-Express](https://github.com/alankleindev/RaspberryPi-Temperature-Express) - Express Framework / REST API To Consume Raspberry Pi Sensor Data and Publish to Firebase Cloud Firestore
+- [RaspberryPi-Temperature-Express](https://github.com/alankleindev/RaspberryPi-Temperature-Express) - REST API To Consume Raspberry Pi Sensor Data and Publish to Cloud Firestore
 
 ## Authors
 
