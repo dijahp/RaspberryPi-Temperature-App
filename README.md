@@ -20,7 +20,7 @@ Code Editor, Node.js, JavaScript
 - [Express](https://expressjs.com/) - Web framework for Node.js
 - [react d3 ggplot](https://www.npmjs.com/package/react-d3-ggplot) - Data visualizations
 
-## Supporting Repo's
+## Supporting Repos
 
 - [RaspberryPi-Temperature-Sensor](https://github.com/alankleindev/RaspberryPi-Temperature-Sensor) - Raspberry Pi Sensor Code for DigitalCrafts fire-and-ice Project
 - [RaspberryPi-Temperature-Express](https://github.com/alankleindev/RaspberryPi-Temperature-Express) - REST API To Consume Raspberry Pi Sensor Data and Publish to Cloud Firestore
