@@ -32,19 +32,19 @@ class Chart extends Component {
       })
   }
 
-  componentDidUpdate() {
-    //querying firestore with get()
-    let sensorRef = this.props.firebase.fs.collection('sensorData');
-    sensorRef.where("sensorKey", "==", this.props.selectedSensor)
-      .orderBy('timestamp')
-      .get().then(querySnapshot => {
-        const data = querySnapshot.docs.map(doc => ({
-          date: (doc.data().timestamp.toDate()),
-          humidity: doc.data().humidity
-        }));
-        this.setState({ lineData: data });
-      })
-  }
+  // componentDidUpdate() {
+  //   //querying firestore with get()
+  //   let sensorRef = this.props.firebase.fs.collection('sensorData');
+  //   sensorRef.where("sensorKey", "==", this.props.selectedSensor)
+  //     .orderBy('timestamp')
+  //     .get().then(querySnapshot => {
+  //       const data = querySnapshot.docs.map(doc => ({
+  //         date: (doc.data().timestamp.toDate()),
+  //         humidity: doc.data().humidity
+  //       }));
+  //       this.setState({ lineData: data });
+  //     })
+  // }
 
   render() {
     const { lineData, aes, dimensions } = this.state;
