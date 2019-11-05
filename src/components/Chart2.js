@@ -23,7 +23,7 @@ class Chart extends Component {
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.props.selectedSensor)
       .orderBy('timestamp')
-      .onSnapshot((querySnapshot) => {
+      .get().then(querySnapshot => {
         const data = querySnapshot.docs.map(doc => ({
           date: (doc.data().timestamp.toDate()),
           humidity: doc.data().humidity
@@ -37,7 +37,7 @@ class Chart extends Component {
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.props.selectedSensor)
       .orderBy('timestamp')
-      .onSnapshot((querySnapshot) => {
+      .get().then(querySnapshot => {
         const data = querySnapshot.docs.map(doc => ({
           date: (doc.data().timestamp.toDate()),
           humidity: doc.data().humidity

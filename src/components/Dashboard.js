@@ -59,7 +59,7 @@ class Dashboard extends Component {
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.state.selectedSensor)
       .orderBy('timestamp')
-      .onSnapshot((querySnapshot) => {
+      .get().then(querySnapshot => {
         const humidArray = querySnapshot.docs.map(doc => (doc.data().humidity));
         let humidSum = humidArray.reduce((previous, current) => current += previous);
         const humidAve = humidSum / humidArray.length;
@@ -81,7 +81,7 @@ class Dashboard extends Component {
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.state.selectedSensor)
       .orderBy('timestamp')
-      .onSnapshot((querySnapshot) => {
+      .get().then(querySnapshot => {
         const humidArray = querySnapshot.docs.map(doc => (doc.data().humidity));
         let humidSum = humidArray.reduce((previous, current) => current += previous);
         const humidAve = humidSum / humidArray.length;
