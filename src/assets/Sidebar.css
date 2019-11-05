@@ -9,6 +9,21 @@
   width: 240px;
 }
 
+
+.rasp-img-container{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-left: 90px;
+  margin-bottom: 5px;
+
+
+
+}
+.Sidebar img{
+  width: 50px;
+
+}
 .Sidebar a {
   color: #fff;
   text-decoration: none;
@@ -36,6 +51,16 @@ text-align-last:center;
 
 
 @media (max-width: 1300px) {
+  .rasp-img-container{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-left: 50px;
+    margin-bottom: 5px;
+  
+  
+  
+  }
   select{
     width: 120px;
     height: 30px;

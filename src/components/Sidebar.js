@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as ROUTES from "../constants/routes"
 import "../assets/Sidebar.css";
+import rasp from '../assets/IMG/raspberry-pi.svg'
 
 import { withFirebase } from './Firebase';
 var sensors = [];
@@ -9,15 +10,17 @@ var sensorMap = [];
 class Sidebar extends Component {
   constructor(props) {
     super(props);
-    this.state = {childVal:'',
-                  friendlyName:''};
+    this.state = {
+      childVal: '',
+      friendlyName: ''
+    };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     var key = sensorMap.find(o => o.friendlyName === event.target.value);
     this.props.handleSensor(key["sensorKey"]);
-    this.setState({childVal: key["sensorKey"], friendlyName: key['friendlyName']});
+    this.setState({ childVal: key["sensorKey"], friendlyName: key['friendlyName'] });
   }
 
 
@@ -45,6 +48,9 @@ class Sidebar extends Component {
             )}
 
           </select>
+        </div>
+        <div className="rasp-img-container">
+          <img className="rasp-img" src={rasp} />
         </div>
       </div>
     );
