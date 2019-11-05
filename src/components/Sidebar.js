@@ -25,18 +25,24 @@ class Sidebar extends Component {
 
 
   render() {
-
-    let sensorRef = this.props.firebase.fs.collection('sensorMeta').onSnapshot((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        var newItem = doc.data().friendlyName;
-        var sensorKey = doc.data().sensorKey;
-        if (sensors.indexOf(newItem) === -1) {
-          sensors.push(doc.data().friendlyName);
-          sensorMap.push({ "friendlyName": newItem, "sensorKey": sensorKey });
-        }
-      })
-    })
-
+ 
+      let sensorRef = this.props.firebase.fs.collection('sensorMeta').limit(3).get()
+      .then(querySnapshot => {
+        querySnapshot.forEach((doc) => {
+          var newItem = doc.data().friendlyName;
+          var sensorKey = doc.data().sensorKey;
+          if (sensors.indexOf(newItem) === -1) {
+            sensors.push(doc.data().friendlyName);
+            sensorMap.push({"friendlyName": newItem, "sensorKey": sensorKey});
+          }
+        }) });
+        
+        let unsub = this.props.firebase.fs.collection('sensorMeta').onSnapshot(() => {
+        });
+  
+        // Stop listening for changes
+        unsub();
+    
     return (
       <div className='Sidebar-section' >
         <h1>Fire and Ice</h1>

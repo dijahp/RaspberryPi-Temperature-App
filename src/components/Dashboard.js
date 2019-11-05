@@ -54,12 +54,13 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    //querying firestore with onSnapshot() listener
+    //querying firestore with get()
     //queries this.state.selectedSensor
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.state.selectedSensor)
       .orderBy('timestamp')
-      .onSnapshot((querySnapshot) => {
+      .limit(10)
+      .get().then(querySnapshot => {
         const humidArray = querySnapshot.docs.map(doc => (doc.data().humidity));
         let humidSum = humidArray.reduce((previous, current) => current += previous);
         const humidAve = humidSum / humidArray.length;
@@ -72,16 +73,23 @@ class Dashboard extends Component {
           currentTemp: tempAve.toFixed(2),
           currentHumidity: humidAve.toFixed(2)
         });
-      })
+      } );
+
+      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
+      });
+
+      // Stop listening for changes
+      unsub();
   };
 
   componentDidUpdate() {
-    //querying firestore with onSnapshot() listener
+    //querying firestore with get()
     //queries this.state.selectedSensor
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.state.selectedSensor)
       .orderBy('timestamp')
-      .onSnapshot((querySnapshot) => {
+      .limit(10)
+      .get().then(querySnapshot => {
         const humidArray = querySnapshot.docs.map(doc => (doc.data().humidity));
         let humidSum = humidArray.reduce((previous, current) => current += previous);
         const humidAve = humidSum / humidArray.length;
@@ -95,7 +103,12 @@ class Dashboard extends Component {
           currentTemp: tempAve.toFixed(1) + "°F",
           currentHumidity: humidAve.toFixed(1)
         });
-      })
+      });
+      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
+      });
+
+      // Stop listening for changes
+      unsub();
   };
 
   render() {

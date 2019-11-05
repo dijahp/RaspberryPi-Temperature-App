@@ -19,31 +19,46 @@ class Chart extends Component {
   }
 
   componentDidMount() {
-    //querying firestore with onSnapshot() listener
+    //querying firestore with get()
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.props.selectedSensor)
       .orderBy('timestamp')
-      .onSnapshot((querySnapshot) => {
+      .limit(25)
+      .get().then(querySnapshot => {
         const data = querySnapshot.docs.map(doc => ({
           date: (doc.data().timestamp.toDate()),
           temperature: (doc.data().temp * (9 / 5) + 32),
         }));
         this.setState({ lineData: data });
       })
+
+      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
+      });
+
+      // Stop listening for changes
+      unsub();
   }
 
   componentDidUpdate() {
-    //querying firestore with onSnapshot() listener
+    //querying firestore with get()
     let sensorRef = this.props.firebase.fs.collection('sensorData');
     sensorRef.where("sensorKey", "==", this.props.selectedSensor)
       .orderBy('timestamp')
-      .onSnapshot((querySnapshot) => {
+      .limit(25)
+      .get().then(querySnapshot => {
         const data = querySnapshot.docs.map(doc => ({
           date: (doc.data().timestamp.toDate()),
           temperature: (doc.data().temp * (9 / 5) + 32)
         }));
         this.setState({ lineData: data });
-      })
+      });
+
+      // [START detach_listener]
+      let unsub = this.props.firebase.fs.collection('sensorData').onSnapshot(() => {
+      });
+
+      // Stop listening for changes
+      unsub();
   }
 
   render() {
