@@ -23,7 +23,8 @@ class Sidebar extends Component {
 
   render() {
  
-      let sensorRef = this.props.firebase.fs.collection('sensorMeta').onSnapshot((querySnapshot) => {
+      let sensorRef = this.props.firebase.fs.collection('sensorMeta').get()
+      .then(querySnapshot => {
         querySnapshot.forEach((doc) => {
           var newItem = doc.data().friendlyName;
           var sensorKey = doc.data().sensorKey;
